@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setInterval(function(){
+    //     console.log('Aditya',Date.now());
+    // },1000) //setInterval executes after every 1 second again and again
+
+    let lastName = function(str){
+        console.log(`${str} Kamal`,Date.now());
+    }
+    //setInterval(lastName,1000) // This is another way by giving only reference to use setInterval and don't execute it (For e.g lastName())
+    //setInterval(lastName,1000,"Aditya") // We can also use third parameter here but we but pass it.
+    
+    // const intervalID = setInterval(lastName,1000,"Aditya")
+    // clearInterval(intervalID) 
+    let intervalID;
+    const start = document.querySelector('#start').addEventListener('click',function(){
+        intervalID = setInterval(lastName,1000,"Aditya")
+    })
+
+    const stop = document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(intervalID) 
+        console.log("Stopped");
+        
+    })
+</script>
+</html>

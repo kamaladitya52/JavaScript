@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit.</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    setTimeout(function(){
+        console.log("Aditya");
+    },2000) // setTimeout executes only after 2 second only once
+
+    let lastName = function(){
+        console.log("Kamal");
+    }
+    setTimeout(lastName,2000) // This is another way by giving only reference to use setTimeout and don't execute it (For e.g lastName())
+
+    const changeHeading = function (){
+        document.querySelector('h1').innerHTML = "Heading is changed now."
+    }
+    // setTimeout(changeHeading,3000) // This will changed the heading
+    
+    const changeMe = setTimeout(changeHeading,3000)
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe) // clearTimeout will stop all the callstack or the que that is going to happend next.
+        console.log("STOPPED");
+        
+    })
+
+</script>
+</html>
