@@ -10,7 +10,7 @@ Welcome to my **JavaScript Learning repository!** This repo contains all my note
 
 **Resources:** A list of useful resources, including articles, books, and tutorials, that I’ve found helpful.
 
-## 📺 Recommended [YouTube Channel]()
+## 📺 Recommended YouTube Channel
 
 To complement the notes and practice exercises in this repo, I highly recommend following this YouTube Channel **[Chai aur Code](https://youtube.com/playlist?list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&si=cuesruxJRbn5AwaK)** for high-quality tutorials on JavaScript. The videos are well-structured, beginner-friendly, and cover both fundamental and advanced topics.
 
