@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background-color: #313131">
+    <button id="orange">Orange</button>    
+    <button id="green">Green</button>    
+</body>
+<script>
+// **************************************** Lexical Scoping Start ****************************************
+    function init(){
+        let name = "Mozilla"
+        function displayName(){
+            console.log(name);
+            
+        }
+        displayName()
+    }
+    init()
+
+    function outer(){
+        let username = "Aditya"
+        //console.log("Outer ",secret); // Error -> Not Accessible
+        function inner(){
+            console.log("INNER ",username);
+            let secret = "my123"
+        }
+        function innerTwo(){
+            console.log("INNER ",username);
+            //console.log(secret); //Error -> Not Accessible
+            
+        }
+        inner()
+        innerTwo()
+    }
+    outer()
+    //console.log("TOO OUTER",username); // Error -> Not Accessible
+    
+// **************************************** Lexical Scoping End ****************************************
+
+// ***************************************** Closure Start *********************************************
+
+    function makeFunc(){
+        const name = "Mozilla Firefox"
+        function displayName(){
+            console.log(name);
+        }
+        return displayName // here this return whole makeFunc() lexical scope
+    }
+    const myFunc = makeFunc() // whole lexical scope is returning here i.e.. whole function (makeFunc())
+    myFunc()
+
+
+// ***************************************** Closure End ***********************************************
+</script>
+<script>
+// Can make multiple script statement in HTML File
+    // document.getElementById('orange').onclick = function (){
+    //     document.body.style.backgroundColor = "orange"
+    // } 
+    // document.getElementById('green').onclick = function (){
+    //     document.body.style.backgroundColor = "green" 
+    // } 
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`
+        return function(){ // use this function 
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+    document.getElementById('orange').onclick = clickHandler("orange") 
+    document.getElementById('green').onclick = clickHandler("green") 
+</script>
+</html>
